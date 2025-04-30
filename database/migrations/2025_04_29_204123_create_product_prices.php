@@ -14,16 +14,12 @@ return new class extends Migration
         Schema::create('product_prices', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('product_id');
-            $table->uuid('unit_id');
             $table->float('price')->default(0);
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('product_id')
                 ->references('id')
                 ->on('products');
-            $table->foreign('unit_id')
-                ->references('id')
-                ->on('units');
         });
     }
 
