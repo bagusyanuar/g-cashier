@@ -14,4 +14,5 @@ interface CategoryUseCase
     public function findAll(CategoryQuery $queryParams): ServiceResponse;
     public function findByID($id): ServiceResponse;
     public function patch($id, CategorySchema $schema): ServiceResponse;
+    public function delete($id): ServiceResponse;
 }

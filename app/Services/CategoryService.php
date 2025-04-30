@@ -95,4 +95,14 @@ class CategoryService implements CategoryUseCase
             return ServiceResponse::internalServerError($e->getMessage());
         }
     }
+
+    public function delete($id): ServiceResponse
+    {
+        try {
+            Category::destroy($id);
+            return ServiceResponse::statusOK("successfully delete category");
+        }catch (\Throwable $e) {
+            return ServiceResponse::internalServerError($e->getMessage());
+        }
+    }
 }

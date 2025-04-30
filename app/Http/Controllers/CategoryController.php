@@ -51,4 +51,10 @@ class CategoryController extends CustomController
         $response = $this->service->patch($id, $schema);
         return $this->toJSON($response);
     }
+
+    public function delete($id)
+    {
+        $response = $this->service->delete($id);
+        return $this->toJSON($response);
+    }
 }
