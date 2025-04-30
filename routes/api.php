@@ -22,4 +22,8 @@ Route::group(['middleware' => [\App\Http\Middleware\JWTVerify::class]], function
         Route::post('/{id}', [\App\Http\Controllers\ProductController::class, 'patch']);
         Route::delete('/{id}', [\App\Http\Controllers\ProductController::class, 'delete']);
     });
+
+    Route::group(['prefix' => 'transaction'], function () {
+        Route::post('/', [\App\Http\Controllers\TransactionController::class, 'create']);
+    });
 });
