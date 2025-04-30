@@ -18,6 +18,11 @@ class CustomController
         $this->request = Request::createFromGlobals();
     }
 
+    public function formBody()
+    {
+        return $this->request->all();
+    }
+
     public function jsonBody()
     {
         return $this->request->json()->all();
